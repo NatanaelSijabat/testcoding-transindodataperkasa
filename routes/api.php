@@ -20,5 +20,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('/kategori', KategorisampahController::class);
 Route::resource('/sampah', SampahController::class);
+
+
+Route::get('/kategori', [KategorisampahController::class, 'index'])->name('index');
+Route::get('/kategori/{id}', [KategorisampahController::class, 'show'])->name('show');
+Route::post('/kategori', [KategorisampahController::class, 'store'])->name('store');
+Route::patch('/kategori/{id}', [KategorisampahController::class, 'update'])->name('update');
+Route::put('/kategori/{id}', [KategorisampahController::class, 'update'])->name('update');
+Route::delete('/kategori/{id}', [KategorisampahController::class, 'destroy'])->name('destroy');

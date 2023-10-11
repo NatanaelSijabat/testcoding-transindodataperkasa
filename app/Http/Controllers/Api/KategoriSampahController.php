@@ -40,10 +40,6 @@ class KategorisampahController extends BaseController
     {
         $data = kategori_sampah::find($id);
 
-        $request->validate([
-            'nama' => 'required'
-        ]);
-
         $data->update($request->all());
 
         return $this->sendResponse(new KategoriResource($data), 'Data Kategori Berhasil Diperbarui');
