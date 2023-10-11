@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class sampah extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['id_kategorisampah', 'nama', 'deskripsi', 'foto', 'harga'];
 }
